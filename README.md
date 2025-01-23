@@ -18,6 +18,13 @@ Avatar2009.avi
 
 Example output
 ```lua
+Renamed: TheMatrix1999.mkv -> TheMatrix (1999).mkv
+Renamed: Inception2010.mp4 -> Inception (2010).mp4
+Renamed: Avatar2009.avi -> Avatar (2009).avi
+```
+After running the script, your directory /path/to/your/movies will have the following renamed files:
+
+``lua 
 TheMatrix (1999).mkv
 Inception (2010).mp4
 Avatar (2009).avi
