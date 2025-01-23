@@ -12,6 +12,7 @@ def rename_movie_files(directory):
         # Match the movie name and year from the filename
         # The pattern (.*?)(\d{4})(.*) breaks the filename into three parts
         match = re.match(r"(.*?)(\d{4})(.*)", filename)
+        #any character except newline, 0 or more preceding characters, ? makes the * non greedy for regex from consuming too many charcters
 
         '''if match extract the first part of the filename(movie name) and strip() removes any leading trailing spaces, year extracts 4 digit year, extension: Extracts the remaining part of the filename (e.g., .mp4)'''
         if match:
@@ -21,7 +22,7 @@ def rename_movie_files(directory):
 
             '''This creates the new filename in the Plex naming convention format: MovieName (2022).mp4.'''
             # Create a new filename with Plex naming convention
-            new_filename = f"{movie_name} ({year}){extension}"
+            new_filename = f"{movie_name} ({year}){extension}" #This line creates a new filename by using an f-string to format a string. 
             old_file = os.path.join(directory, filename)
             new_file = os.path.join(directory, new_filename)
 
